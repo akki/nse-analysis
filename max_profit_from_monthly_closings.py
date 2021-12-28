@@ -22,8 +22,6 @@ def main(MONTHLY_PROFIT_LAALACH=4, NO_OF_MONTHS=18, verbose=False):
         )
         add_max_profit_percent_from_last_closing_column(monthly_data)
         PROFITABLE_MONTHS_COUNT = 0
-        # ToDo: Does the next line need to removed?
-        NO_OF_MONTHS = 18
         months = sorted(monthly_data.index.tolist(), reverse=True)
         for month in months[:NO_OF_MONTHS]:
             if monthly_data.loc[month]['max profit percentage from last closing'] > MONTHLY_PROFIT_LAALACH:
