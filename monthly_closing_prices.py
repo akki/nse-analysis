@@ -119,6 +119,25 @@ def add_max_profit_percent_from_last_closing_column(monthly_data: pd.DataFrame) 
     monthly_data['max profit percentage from last closing'] = high_close_profit_percent + [0]
 
 
+def add_max_profit_percent_from_opening_column(monthly_data: pd.DataFrame) -> None:
+    '''
+        Adds the profit %age earned, if stock is bought at a month opening & sold at next month's high
+    '''
+    COLUMN_NAME = 'max profit percentage from opening'
+
+    # monthly_data[COLUMN_NAME] = ['N/A'] * len(monthly_data)
+    high_open_profit_percent = []
+    months = monthly_data.index.tolist()
+    for i in range(len(monthly_data)):
+        month_high = monthly_data.loc[months[i]]['high']
+        month_opening = monthly_data.loc[months[i]]['opening']
+        profit_percent = (month_high - month_opening) / month_opening * 100
+        # monthly_data.loc[months[i]][COLUMN_NAME] = profit_percent
+        high_open_profit_percent.append(profit_percent)
+
+    monthly_data[COLUMN_NAME] = high_open_profit_percent
+
+
 def main(symbol):
     today = datetime.datetime.today()
     monthly_data = get_monthly_data(
