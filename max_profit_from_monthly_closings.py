@@ -1,7 +1,5 @@
 import datetime
 
-from nsepy import get_history
-
 from constants import NIFTY50
 from monthly_closing_prices import (
     add_max_profit_percent_from_last_closing_column, get_monthly_data
