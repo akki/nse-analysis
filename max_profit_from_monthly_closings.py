@@ -15,7 +15,10 @@ def main(MONTHLY_PROFIT_LAALACH=4, NO_OF_MONTHS=18, verbose=False, output_format
                 If 'tsv' -> results are printed in tab-separated format
                 elif 'human' -> results are printed in human readable format
     '''
-    print(f'MONTHLY_PROFIT_LAALACH={MONTHLY_PROFIT_LAALACH}, NO_OF_MONTHS={NO_OF_MONTHS}\n')
+    print(
+        'Calculating max profit from monthly closings with '
+        f'MONTHLY_PROFIT_LAALACH={MONTHLY_PROFIT_LAALACH} and NO_OF_MONTHS={NO_OF_MONTHS}\n'
+    )
     today = datetime.datetime.today()
     for symbol in NIFTY50:
         monthly_data = get_monthly_data(

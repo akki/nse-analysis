@@ -14,6 +14,10 @@ def main(WEEKLY_PROFIT_LAALACH=1, NO_OF_WEEKS=52, verbose=False):
         WEEKLY_PROFIT_LAALACH percent of profit in the next week, in the
         last `NO_OF_WEEKS` weeks
     '''
+    print(
+        'Calculating max profit from weekly closings with '
+        f'WEEKLY_PROFIT_LAALACH={WEEKLY_PROFIT_LAALACH} and NO_OF_WEEKS={NO_OF_WEEKS}\n'
+    )
     today = datetime.datetime.today()
     for symbol in NIFTY50:
         weekly_data = get_weekly_data(
