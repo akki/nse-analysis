@@ -14,3 +14,7 @@ Try out:
 python3 max_profit_from_weekly_closings.py
 ```
 
+## Run tests
+```
+python3 test_utils.py
+```
